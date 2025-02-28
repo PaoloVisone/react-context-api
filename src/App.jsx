@@ -2,6 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // // Integro il sistema di stato e effect
 import { useState, useEffect } from "react";
+// // //Integro Context
+import GlobalContext from './contexts/GlobalContext';
 
 // Pages
 import HomePage from "./pages/Home";
@@ -34,26 +36,30 @@ function App() {
   useEffect(fetchArticles, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
+    <GlobalContext.Provider value={{ articles }}>
 
-        {/* Definiamo una rotta genitore, */}
-        <Route element={<DefaultLayout />}>
+      <BrowserRouter>
+        <Routes>
 
-          {/* Definiamo le rotte figlie */}
-          {/* Esporto i dati dell'array (articles) */}
-          <Route index element={<HomePage articlesHome={articles} />} />
+          {/* Definiamo una rotta genitore, */}
+          <Route element={<DefaultLayout />}>
 
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/posts">
-            <Route index element={<ListProduct />} />
-            <Route path=":id" element={<SingleProduct />} />
-            <Route path="create" element={<CreateProduct />} />
+            {/* Definiamo le rotte figlie */}
+            {/* Esporto i dati dell'array (articles) a Home*/}
+            {/* <Route index element={<HomePage articlesHome={articles} />} /> */}
+            <Route index element={<HomePage />} />
+
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/posts">
+              <Route index element={<ListProduct />} />
+              <Route path=":id" element={<SingleProduct />} />
+              <Route path="create" element={<CreateProduct />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </GlobalContext.Provider>
   );
 
 }

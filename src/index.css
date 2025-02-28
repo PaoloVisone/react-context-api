@@ -37,8 +37,10 @@ a {
   width: 40%;
 }
 
-.article-list h3 {
-  font-size: 30px;
+h1 {
+  /* font-size: 30px; */
+  color: burlywood;
+  font-style: oblique;
 }
 
 .article-list p {
@@ -55,8 +57,10 @@ a {
 }
 
 /* nav Arrow */
-nav {
+.nav-detail {
   padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
 /* Arrow */

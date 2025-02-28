@@ -54,7 +54,7 @@ const Product = () => {
 
                                 <div className="article-list" key={article.id}>
 
-                                    <h3>{article.title}</h3>
+                                    <h1>{article.title}</h1>
                                     <img src={article.image} alt={article.title} />
                                     <Link to={`/posts/${article.id}`}>Dettagli</Link>
                                     <p>{article.content}</p>

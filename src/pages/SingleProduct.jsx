@@ -31,17 +31,19 @@ export default function SingleProduct() {
         <>
 
             {/* Navigazione tra posts */}
-            <nav>
+            <nav className="nav-detail">
                 <Link className="arrow" to={`/posts/${parseInt(id) - 1}`}>&#8592;</Link>
+
+
+                {/* Dettagli */}
+                <div>
+                    <h1>{post.title}</h1>
+                    <img className="detail" src={post.image} alt={post.title} />
+                    <p>{post.content}</p>
+                    {/* <p>{post.tags.join(", ")}</p> */}
+                </div>
                 <Link className="arrow" to={`/posts/${parseInt(id) + 1}`}>&#8594;</Link>
             </nav>
-
-            {/* Dettagli */}
-
-            <h2>{post.title}</h2>
-            <img className="detail" src={post.image} alt={post.title} />
-            <p>{post.content}</p>
-            {/* <p>{post.tags.join(", ")}</p> */}
 
 
         </>

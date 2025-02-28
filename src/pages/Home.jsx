@@ -1,6 +1,9 @@
+// Importo i prodotti che l'utente può vedere
+import ProductUser from "./../components/ProductUser"
+
 // HOMEPAGE 
 export default function Home() {
     return (
-        <h1>Questa è l'homepage</h1>
+        <ProductUser />
     )
 }

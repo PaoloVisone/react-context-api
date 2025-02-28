@@ -2,9 +2,10 @@
 import ProductUser from "./../components/ProductUser"
 
 // HOMEPAGE 
-export default function Home(props) {
+export default function Home() {
     return (
         /* Importo i dati da App.jsx */
-        <ProductUser articlesApp={props.articlesHome} />
+        // <ProductUser articlesApp={props.articlesHome} />
+        <ProductUser />
     )
 }
